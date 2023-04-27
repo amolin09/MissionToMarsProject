@@ -30,14 +30,15 @@ class Ship{
     this.type = _type
     this.ability = _ability
   }
+  
   crew = []
 
   missionStatement(_statement = `Can't perform a mission yet.`){
     let statement = _statement
-    if(this.crew.length < 0){
+
+    if(this.crew.length > 0){
       statement = this.ability
     }
-    console.log(this.crew)
     return statement
 
   }
@@ -45,9 +46,11 @@ class Ship{
 
 let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
 const crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
+
+// console.log(mav.crew)
 crewMember1.enterShip(mav)
 
-console.log(mav.length)
+mav.missionStatement()
 
 
 
